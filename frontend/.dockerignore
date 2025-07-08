@@ -1,0 +1,5 @@
+# Dockerignore for Vite + React frontend
+node_modules
+dist
+.env
+*.local

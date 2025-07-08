@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  app:
+    image: node:22
+    working_dir: /app
+    volumes:
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+    ports:
+      - "3000:3000" # Express
+      - "5173:5173" # Vite
+    command: sh -c "cd frontend && npm install && npm run dev & cd backend && npm install && npm run dev"
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    external: true
