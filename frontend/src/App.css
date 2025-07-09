@@ -21,16 +21,20 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
 .project-card {
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 1em;
     box-sizing: border-box;
     display: inline-block;
+    min-height: unset;
+    height: fit-content;
+    width: fit-content;
+    max-width: 100%;
+    padding: 1em 1em 0.5em 1em;
 }
 
 .project-title {
@@ -56,6 +60,20 @@ h2 {
     width: 350px;
     min-width: 300px;
     max-width: 100%;
+    min-height: unset;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.chart-card .no-chart-message {
+    flex: 0 0 auto;
+    min-height: unset;
+    padding: 0.5em 0 0.5em 0;
+    text-align: center;
+    color: #888;
+    font-size: 0.95em;
 }
 
 canvas {
