@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   app:
+    container_name: dockdoser
     image: node:22
     working_dir: /app
     volumes:
@@ -9,7 +10,8 @@ services:
     ports:
       - "3000:3000" # Express
       - "5173:5173" # Vite
-    command: sh -c "cd frontend && npm install && npm run dev & cd backend && npm install && npm run dev"
+    command: sh -c "cd backend && npm install && npm run dev"
+    #command: sh -c "cd frontend && npm install && npm run dev & cd backend && npm install && npm run dev"
     networks:
       - proxy-net
 
